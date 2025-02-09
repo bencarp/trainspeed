@@ -16,7 +16,7 @@ try:
 
 		for line in driver.page_source.split('\n'):
 			if 'traininfoIntro-speedIndicatorText">' in line:
-				speed = re.search(r'speedIndicatorText">(.*)\skm/h', line).group(1)
+				speed = re.search(r'speedIndicatorText">([0-9]+)\skm/h</span>', line).group(1)
 				print(speed + " km/h")
 
 except KeyboardInterrupt:
